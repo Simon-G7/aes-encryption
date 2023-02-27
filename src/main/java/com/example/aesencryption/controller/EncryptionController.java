@@ -7,10 +7,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 @RestController
 @RequestMapping("/encryption")
+@CrossOrigin(origins = "*")
 public class EncryptionController {
-
+    @RequestMapping("/user")
+    public Principal user(Principal user) {
+        return user;
+    }
     @Autowired
     EncryptionService encryptionService;
 
